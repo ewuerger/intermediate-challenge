@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Start here: open `CHALLENGE.html` in your browser (or read `CHALLENGE.md`).
 
-## Getting Started
+<!--
+ ~ Copyright DB InfraGO AG and contributors
+ ~ SPDX-License-Identifier: Apache-2.0
+ -->
 
-First, run the development server:
+# Role Board
+
+A small Next.js starter for managing the roles and departments of users, used as a live interview challenge.
+
+## Commands
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun install
+bun dev              # localhost:3000
+bun run lint
+bun run typecheck
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Fake SSO
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+There is no real login. The select in the header ("Acting as") picks the current user and stores the id in the `demo-user` cookie; `getCurrentUser()` in `src/lib/session.ts` reads it on the server. Without a cookie you act as `applicant-1`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Data
 
-## Learn More
+All data is in memory, seeded from `src/lib/seed.ts`. It resets when the dev server restarts, or when you click "Reset data" in the header.
 
-To learn more about Next.js, take a look at the following resources:
+## Third-party agent skills
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`.agents/skills/` contains skills copied from eservice:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `vercel-react-best-practices` — MIT (see its `SKILL.md` frontmatter).
+- `emil-design-eng`, `animate`, `animation-vocabulary`, `find-animation-opportunities`, `improve-animations`, `review-animations` — copied from eservice; check redistribution rights before publishing.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Apache-2.0, see `LICENSE`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Publishing (interviewer)
+
+Only `main` is meant to be public. Create an empty GitHub repository, then:
+
+```bash
+git remote add origin <url> && git push -u origin main
+```

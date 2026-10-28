@@ -29,16 +29,16 @@ function user(
 }
 
 export const seedUsers: User[] = [
-  user("admin-1", "Ada Admin", "admin", []),
-  user("admin-2", "Adam Admin", "admin", []),
-  user("manager-1", "Mia Manager", "manager", ["etcs", "dstw"]),
-  user("manager-2", "Max Manager", "manager", ["dstw"]),
-  user("manager-3", "Lea Manager", "manager", ["lbs", "bahnhoefe"]),
-  user("reviewer-1", "Rita Reviewer", "reviewer", ["etcs"]),
-  user("reviewer-2", "Ralf Reviewer", "reviewer", ["etcs", "lbs"]),
-  user("reviewer-3", "Rosa Reviewer", "reviewer", []),
-  user("approver-1", "Anton Approver", "approver", ["dstw"]),
-  user("approver-2", "Alina Approver", "approver", ["bahnhoefe"]),
+  user("admin-1", "Ada", "admin", []),
+  user("admin-2", "Adam", "admin", []),
+  user("manager-1", "Mia", "manager", ["etcs", "dstw"]),
+  user("manager-2", "Max", "manager", ["dstw"]),
+  user("manager-3", "Lea", "manager", ["lbs", "bahnhoefe"]),
+  user("reviewer-1", "Rita", "reviewer", ["etcs"]),
+  user("reviewer-2", "Ralf", "reviewer", ["etcs", "lbs"]),
+  user("reviewer-3", "Rosa", "reviewer", []),
+  user("approver-1", "Anton", "approver", ["dstw"]),
+  user("approver-2", "Alina", "approver", ["bahnhoefe"]),
   user("newbie-1", "Nina Neu", null, []),
   user("applicant-1", "Hans Hersteller", "applicant", []),
 ];

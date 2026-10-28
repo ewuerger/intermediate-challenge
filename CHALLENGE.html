@@ -46,10 +46,6 @@
   h1 { font-size: 2rem; margin: 0; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
   h2 { font-size: 1.15rem; margin: 40px 0 12px; }
   .lead { color: var(--muted); margin: 8px 0 0; font-size: 1.05rem; }
-  .pill {
-    font-size: 0.85rem; font-weight: 600; padding: 2px 12px; border-radius: 999px;
-    background: var(--accent); color: var(--on-accent);
-  }
   .muted { color: var(--muted); }
   svg { width: 100%; height: auto; display: block; }
   svg .box { fill: var(--surface); stroke: var(--accent); stroke-width: 2; }
@@ -94,7 +90,7 @@
 <body>
 <main>
   <header>
-    <h1>Role Board Challenge <span class="pill">30 min</span></h1>
+    <h1>Role Board Challenge</h1>
     <p class="lead">Build the management board: admins and managers can change a user's role and departments according to these rules.</p>
   </header>
 
@@ -109,14 +105,14 @@
 
       <rect class="box" x="376" y="10" width="160" height="44" rx="12"/>
       <text class="name" x="456" y="38" text-anchor="middle">admin</text>
-      <text class="duty" x="456" y="74" text-anchor="middle">Admin (technical role) has full write access, sets manager roles and assigns departments.</text>
+      <text class="duty" x="456" y="74" text-anchor="middle">full write access, sets manager roles and assigns departments</text>
 
       <path class="arrow" d="M456,86 L456,124" marker-end="url(#arrowhead)"/>
 
       <rect class="box" x="376" y="130" width="160" height="44" rx="12"/>
       <text class="name" x="456" y="158" text-anchor="middle">manager</text>
-      <text class="duty" x="456" y="194" text-anchor="middle">Manager manages the reviewers and approvers of his department(s), sets departments on them,</text>
-      <text class="duty" x="456" y="212" text-anchor="middle">and has all privileges of the lower roles for his departments.</text>
+      <text class="duty" x="456" y="194" text-anchor="middle">manages reviewers and approvers of his department(s), sets departments</text>
+      <text class="duty" x="456" y="212" text-anchor="middle">and has all privileges of lower roles for his departments.</text>
 
       <path class="arrow" d="M456,224 L300,262" marker-end="url(#arrowhead)"/>
       <path class="arrow" d="M456,224 L612,262" marker-end="url(#arrowhead)"/>
@@ -157,16 +153,6 @@
   </section>
 
   <section>
-    <h2>Timeline</h2>
-    <div class="timeline">
-      <div class="t-short"><strong>5 min</strong>Questions</div>
-      <div class="t-long"><strong>20 min</strong>Build with AI</div>
-      <div class="t-short"><strong>5 min</strong>Walkthrough</div>
-    </div>
-    <p class="muted">5 min questions and reading the repo, 20 min build, 5 min walkthrough. Ask your questions first. Using the AI assistant is expected.</p>
-  </section>
-
-  <section>
     <h2>Getting started</h2>
 <pre><code>bun install
 bun dev
@@ -193,23 +179,6 @@ bun dev
         <tr><td><code>applicant-1</code></td><td>Hans Hersteller</td><td><span class="badge role">applicant</span></td><td><span class="muted">–</span></td></tr>
       </tbody>
     </table>
-  </section>
-
-  <section>
-    <h2>Where things are</h2>
-    <ul class="files">
-      <li><code>src/lib/domain.ts</code> — <code>Role</code>, <code>DepartmentId</code>, <code>Department</code>, <code>User</code> types.</li>
-      <li><code>src/lib/seed.ts</code> — seed departments and demo users.</li>
-      <li><code>src/lib/store.ts</code> — in-memory store (read helpers, <code>resetStore</code>).</li>
-      <li><code>src/lib/session.ts</code> — fake SSO: <code>getCurrentUser()</code> reads the <code>demo-user</code> cookie.</li>
-      <li><code>src/app/actions/session.ts</code> — server actions <code>switchUser</code>, <code>resetData</code>.</li>
-      <li><code>src/components/user-switcher.tsx</code> — header select for the acting user.</li>
-      <li><code>src/app/layout.tsx</code> — header, nav, user switcher.</li>
-      <li><code>src/app/page.tsx</code> — users table.</li>
-      <li><code>src/app/departments/page.tsx</code> — departments table.</li>
-      <li><code>src/components/ui/*</code> — generated shadcn primitives.</li>
-      <li>Agent skills live in <code>.agents/skills/</code>.</li>
-    </ul>
   </section>
 </main>
 </body>

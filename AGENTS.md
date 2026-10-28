@@ -5,7 +5,7 @@
 
 # AGENTS.md
 
-Role Board: a small Next.js app for managing the roles and departments of users. Interview starter; the brief is in `CHALLENGE.md`.
+Role Board: a small Next.js app for managing the roles and departments of users. Briefing is in `CHALLENGE.md`.
 
 ## Stack
 
